@@ -18,8 +18,8 @@ export default function Card({ imgSrc, albumName, albumYear }: CardProps) {
         ></Image>
       </div>
       <div className="flex flex-col font-medium items-center gap-2">
-        <h2 className="text-3xl">{albumName}</h2>
-        <p className="text-2xl">{albumYear}</p>
+        <h2 className="md:text-2xl text-xl">{albumName}</h2>
+        <p className="md:text-xl text-base">{albumYear}</p>
       </div>
     </div>
   );

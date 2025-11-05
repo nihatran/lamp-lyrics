@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col h-svh w-full justify-center items-center px-10 py-5 xl:p-0">
-      <div className="h-svh xl:w-[70vw] w-full flex flex-col items-center">
+    <div className="flex flex-col xl:h-svh w-full justify-center items-center px-10 py-5 xl:p-0">
+      <div className="xl:h-svh xl:w-[70vw] w-full flex flex-col items-center">
         <h1 className="text-[clamp(2.4rem,9vw,14rem)] font-medium xl:font-normal">
           Lyrics From Lamp
         </h1>
