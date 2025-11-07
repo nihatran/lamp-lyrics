@@ -2,10 +2,11 @@
 
 import { useRef } from "react";
 import Card from "./Card";
-import { albums } from "@/public/albumData";
+import { albums } from "@/app/albumData";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,12 +55,13 @@ export default function Albums() {
             className="w-fit flex flex-nowrap md:gap-[5rem] gap-[2rem] xl:px-10 px-5"
           >
             {albums.map((album) => (
-              <Card
-                key={album.id}
-                cover={album.cover}
-                title={album.title}
-                date={album.date}
-              ></Card>
+              <Link key={album.id} href={`/lyrics/${album.slug}`}>
+                <Card
+                  cover={album.cover}
+                  title={album.title}
+                  date={album.date}
+                ></Card>
+              </Link>
             ))}
           </div>
         </div>
