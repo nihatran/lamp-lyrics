@@ -53,9 +53,9 @@ export default function Albums() {
             ref={albumsRef}
             className="w-fit flex flex-nowrap md:gap-[5rem] gap-[2rem] xl:px-10 px-5"
           >
-            {albums.map((album, index) => (
+            {albums.map((album) => (
               <Card
-                key={index}
+                key={album.id}
                 cover={album.cover}
                 title={album.title}
                 date={album.date}
