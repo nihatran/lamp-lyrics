@@ -1,18 +1,20 @@
-import { albums } from "@/app/albumData";
+"use client";
 
-// pre-renders (statically generates) all album pages at build time
-export async function generateStaticParams() {
-  return albums.map((album) => ({
-    slug: album.slug,
-  }));
-}
+import { albums } from "@/app/albumData";
+import { useState, use } from "react";
+import Image from "next/image";
 
 interface LyricsPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function LyricsPage({ params }: LyricsPageProps) {
-  const { slug } = await params;
+interface Song {
+  name: string;
+  lyrics: string;
+}
+
+export default function LyricsPage({ params }: LyricsPageProps) {
+  const { slug } = use(params);
 
   const album = albums.find((album) => album.slug === slug);
 
@@ -20,5 +22,50 @@ export default async function LyricsPage({ params }: LyricsPageProps) {
     return <div>Album not found</div>;
   }
 
-  return <div></div>;
+  const [selectedSong, setSelectedSong] = useState<Song>(album.songs[0]);
+
+  return (
+    <div className="flex justify-center items-center">
+      <div className="flex md:flex-row flex-col md:items-start items-center md:justify-center w-full gap-8 lg:mt-30 mt-10 md:pl-5 lg:pl-0">
+        <div className="flex flex-col gap-1">
+          <div className="relative w-[250px] aspect-square sm:w-[350px] mb-4 xl:mb-0">
+            <Image
+              src={album.cover}
+              fill
+              alt="lamp album cover"
+              sizes="(max-width:440px) 250px, 350px"
+            ></Image>
+          </div>
+          <h3 className="md:text-2xl text-xl font-medium">{album.title}</h3>
+          <p className="md:text-lg text-base">{album.date}</p>
+          <ol className="flex flex-col gap-2 mt-4 ml-4 list-decimal md:text-xl text-lg">
+            {album.songs.map((song) => {
+              const isSelected = selectedSong?.name === song.name;
+
+              return (
+                <li
+                  key={song.id}
+                  onClick={() => setSelectedSong(song)}
+                  className={`cursor-pointer pl-2 ${
+                    isSelected
+                      ? "bg-slate-200 font-medium"
+                      : "hover:bg-gray-100"
+                  }`}
+                >
+                  {song.name}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+        <div className="lg:w-[500px] pb-10">
+          {selectedSong.lyrics.split("\n").map((line, index) => (
+            <p key={index} className="py-1 px-5">
+              {line}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
