@@ -9,6 +9,7 @@ interface LyricsPageProps {
 }
 
 interface Song {
+  id: string;
   name: string;
   lyrics: string;
 }
