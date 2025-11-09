@@ -46,16 +46,16 @@ export default function Hero() {
           <div className="flex flex-col-reverse xl:flex-col xl:w-[18vw] text-sm lg:text-lg md:text-base xl:text-xl xl:justify-between items-center xl:items-start">
             <div className="flex flex-col xl:gap-6 gap-4">
               <p>
-                Nostalgia and longing are interwoven in the songs of Japanese
-                Indie pop band Lamp.
+                Nostalgia and longing are interwoven in the dreamy songs of
+                Japanese indie pop band Lamp.
               </p>
               <p>
-                One's heart goes through many subtle changes as the seasons go
-                by, and each lyric carefully unveils these precious feelings.
+                The heart goes through many subtle changes as the seasons go by,
+                and such precious feelings should be cherished.
               </p>
               <p>
-                No band is better suited for listening to on a quiet Sunday
-                morning.
+                Whether it's rainy or sunny, no band is better suited for
+                listening to on a quiet Sunday morning.
               </p>
             </div>
             <div className="relative w-[250px] aspect-square sm:w-[445px] mb-4 xl:mb-0">
