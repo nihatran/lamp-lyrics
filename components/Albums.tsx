@@ -44,7 +44,7 @@ export default function Albums() {
     <>
       <div
         ref={albumWrapperRef}
-        className="h-screen flex items-center overflow-hidden pl-3"
+        className="lg:h-screen flex items-center overflow-hidden pl-3"
       >
         <div className="flex flex-col">
           <h2 className="md:text-2xl text-xl mb-3 xl:pl-10 pl-5">
