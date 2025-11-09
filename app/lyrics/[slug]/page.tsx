@@ -3,6 +3,7 @@
 import { albums } from "@/app/albumData";
 import { useState, use } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface LyricsPageProps {
   params: Promise<{ slug: string }>;
@@ -58,6 +59,17 @@ export default function LyricsPage({ params }: LyricsPageProps) {
               );
             })}
           </ol>
+          <div className="flex mt-3 justify-between">
+            <button className="hover:text-green-700 md:text-lg border-1 border-slate-300 p-2 cursor-pointer">
+              <a>Listen on Spotify</a>
+            </button>
+            <Link
+              href="/"
+              className="hover:text-blue-700 transition-colors md:text-lg border-1 border-slate-300 p-2"
+            >
+              Back to Home
+            </Link>
+          </div>
         </div>
         <div className="lg:w-[500px] pb-10">
           {selectedSong.lyrics.split("\n").map((line, index) => (
