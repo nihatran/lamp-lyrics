@@ -69,6 +69,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <p className="mt-10 xl:mb-10 text-center w-full font-medium">
+        All rights reserved to Lamp.
+      </p>
     </div>
   );
 }

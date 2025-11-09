@@ -28,7 +28,7 @@ export default function LyricsPage({ params }: LyricsPageProps) {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="flex md:flex-row flex-col md:items-start items-center md:justify-center w-full gap-8 lg:mt-30 mt-10 md:pl-5 lg:pl-0">
+      <div className="flex md:flex-row flex-col md:items-start items-center md:justify-center w-full gap-8 xl:mt-12 mt-10 md:pl-5 lg:pl-0">
         <div className="flex flex-col gap-1">
           <div className="relative w-[250px] aspect-square sm:w-[350px] mb-4 xl:mb-0">
             <Image
