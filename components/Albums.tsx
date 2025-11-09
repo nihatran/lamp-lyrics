@@ -35,7 +35,7 @@ export default function Albums() {
       end: () => `+=${getScrollAmount() - 10}`,
       pin: true,
       animation: tween,
-      scrub: window.innerWidth < 768 ? 3 : 1,
+      scrub: 1,
       invalidateOnRefresh: true,
     });
   });
@@ -44,7 +44,7 @@ export default function Albums() {
     <>
       <div
         ref={albumWrapperRef}
-        className="lg:h-screen flex items-center overflow-hidden pl-3"
+        className="h-svh flex items-center overflow-hidden pl-3"
       >
         <div className="flex flex-col">
           <h2 className="md:text-2xl text-xl mb-3 xl:pl-10 pl-5">
