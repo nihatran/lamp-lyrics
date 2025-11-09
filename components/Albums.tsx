@@ -35,7 +35,7 @@ export default function Albums() {
       end: () => `+=${getScrollAmount() - 10}`,
       pin: true,
       animation: tween,
-      scrub: 1,
+      scrub: window.innerWidth < 768 ? 3 : 1,
       invalidateOnRefresh: true,
     });
   });

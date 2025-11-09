@@ -49,9 +49,7 @@ export default function LyricsPage({ params }: LyricsPageProps) {
                   key={song.id}
                   onClick={() => setSelectedSong(song)}
                   className={`cursor-pointer pl-2 ${
-                    isSelected
-                      ? "bg-slate-200 font-medium"
-                      : "hover:bg-gray-100"
+                    isSelected ? "bgColor font-medium" : ""
                   }`}
                 >
                   {song.name}
