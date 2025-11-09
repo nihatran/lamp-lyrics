@@ -59,13 +59,15 @@ export default function LyricsPage({ params }: LyricsPageProps) {
               );
             })}
           </ol>
-          <div className="flex mt-3 justify-between">
+          <div className="flex mt-5 justify-between">
             <button className="hover:text-green-700 md:text-lg border-1 border-slate-300 p-2 cursor-pointer">
-              <a>Listen on Spotify</a>
+              <a href={album.spotify} target="_blank">
+                Listen on Spotify
+              </a>
             </button>
             <Link
               href="/"
-              className="hover:text-blue-700 transition-colors md:text-lg border-1 border-slate-300 p-2"
+              className="hover:text-blue-700 md:text-lg border-1 border-slate-300 p-2"
             >
               Back to Home
             </Link>
